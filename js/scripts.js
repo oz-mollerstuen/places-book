@@ -20,3 +20,12 @@ function Place(placeName, placeLandmark, placeRating) {
     this.placeLandmark = placeLandmark;
     this.placeRating = placeRating;
 }
+
+// UI logic
+window.addEventListener("load", function() {
+    let form = document.getElementById("form")
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+    })
+})
