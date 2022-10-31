@@ -22,23 +22,27 @@ function Place(placeName, placeLandmark, placeRating) {
 }
 
 // UI logic
+let newPlace = new PlacesBook();
 window.addEventListener("load", function() {
     let form = document.getElementById("form")
 
     form.addEventListener("submit", function(event) {
         event.preventDefault();
 
-        let newPlace = new PlacesBook();
+        
 
         const placeInput = document.getElementById("places").value;
         const landmarkInput = document.getElementById("landmark").value;
         const ratingInput = document.getElementById("rating").value;
 
         let placeObj = new Place(placeInput, landmarkInput, ratingInput);
-        console.log(placeObj);
+        newPlace.addPlace(placeObj)
+        console.log(newPlace.places);
 
         //let output = newPlace.addPlace(placeObj);
-        document.getElementById("output").innerText = placeObj;
+        document.getElementById("output1").innerText = placeObj.placeName;
+        document.getElementById("output2").innerText = placeObj.placeLandmark;
+        document.getElementById("output3").innerText = placeObj.placeRating;
 
     })
 })
