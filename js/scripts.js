@@ -27,5 +27,18 @@ window.addEventListener("load", function() {
 
     form.addEventListener("submit", function(event) {
         event.preventDefault();
+
+        let newPlace = new PlacesBook();
+
+        const placeInput = document.getElementById("places").value;
+        const landmarkInput = document.getElementById("landmark").value;
+        const ratingInput = document.getElementById("rating").value;
+
+        let placeObj = new Place(placeInput, landmarkInput, ratingInput);
+        console.log(placeObj);
+
+        //let output = newPlace.addPlace(placeObj);
+        document.getElementById("output").innerText = placeObj;
+
     })
 })
